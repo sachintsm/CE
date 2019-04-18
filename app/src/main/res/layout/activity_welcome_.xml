@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".Welcome_Activity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:src="@drawable/logos"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/success"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
+    <Button
+        android:id="@+id/btnletsgo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:layout_margin="10dp"
+        android:text="@string/letsgo"
+        android:textSize="20sp"
+        android:textColor="@color/colorLightPrimary"
+        android:background="@drawable/rounded_buttton"
+        android:onClick="myadds"
+        />
+</LinearLayout>
