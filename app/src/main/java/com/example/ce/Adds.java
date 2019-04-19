@@ -13,6 +13,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Adds extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,7 +59,55 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    /************************************************************************************************************************/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final ListView lv = findViewById(R.id.addlist);
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://idexserver.tk/sachinCE/adds/list.php";
 
+        JsonArrayRequest request1 = new JsonArrayRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        List<HashMap<String, String>> list = new ArrayList<>();
+                        for(int i =0 ; i < response.length(); i++){
+                            try{
+                                JSONObject obj = response.getJSONObject(i);
+                                HashMap<String,String> map = new HashMap();
+                                map.put("item",obj.getString("item"));
+                                map.put("date",obj.getString("date"));
+                                map.put("district",obj.getString("district"));
+                                map.put("city",obj.getString("city"));
+                                map.put("id",obj.getString("id"));
+                                list.add(map);
+                            }
+                            catch (Exception e) {
+
+                            }
+                        }
+                        int layout = R.layout.single_add;
+                        int [] views = {R.id.item, R.id.location,R.id.city,R.id.date,R.id.add_id};
+                        String[] cols = {"item","district","city","date","id"};
+
+                        SimpleAdapter adapter = new SimpleAdapter(Adds.this, list,layout, cols,views);
+                        lv.setAdapter(adapter);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Adds.this, "Error" + error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        queue.add(request1);
+    }
+    /************************************************************************************************************************/
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -86,6 +152,10 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(intent1);
                 break;
             case R.id.nav_myAdd:
+                break;
+            case R.id.nav_myprofile:
+                Intent intent = new Intent(Adds.this,Profile_Activity.class);
+                startActivity(intent);
 
         }
 

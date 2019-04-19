@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorDivider"
     android:padding="10dp"
     tools:context=".MainActivity">
 
@@ -12,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:src="@drawable/logos"
+        android:src="@drawable/logomain"
         android:scaleType="fitCenter"
+        android:padding="50dp"
         />
     <ProgressBar
         android:layout_width="match_parent"
@@ -28,9 +30,12 @@
         android:id="@+id/etUname"
         android:layout_weight="1"
         android:hint="@string/username"
+        android:gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorSecondaryText"
-        android:backgroundTint="@color/colorDivider"
+        android:backgroundTint="@color/colorText"
         android:textSize="18sp" />
 
     <EditText
@@ -40,9 +45,12 @@
         android:inputType="textPassword"
         android:id="@+id/etPword"
         android:hint="@string/password"
+        android:gravity="bottom"
         android:textSize="18sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:textColorHint="@color/colorSecondaryText"
-        android:backgroundTint="@color/colorDivider"
+        android:backgroundTint="@color/colorText"
         android:textColor="@color/colorText"
         />
     <LinearLayout
@@ -55,7 +63,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.8"
             android:orientation="vertical">
 
         </LinearLayout>
@@ -71,9 +79,11 @@
                 android:id="@+id/btnsignin"
                 android:layout_margin="5dp"
                 android:layout_weight="2"
+
                 android:background="@drawable/rounded_buttton"
                 android:text="@string/signIn"
                 android:textAllCaps="false"
+                android:backgroundTint="@color/colorText"
                 android:textColor="@color/colorLightPrimary"
                 android:textSize="18sp"
                 android:onClick="signIn"/>
@@ -81,7 +91,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.8"
             android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
@@ -90,7 +100,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.5"
         android:text="New user? Register now"
-        android:textColor="@color/colorPrimaryText"
+        android:textColor="@color/colorSecondaryText"
         android:textAlignment="center"
         android:textSize="14sp"
         android:id="@+id/tvRegister"

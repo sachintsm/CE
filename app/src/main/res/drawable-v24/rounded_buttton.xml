@@ -4,7 +4,8 @@
     <shape
         >
         <corners
-            android:radius="10dp"
+            android:radius="5dp"
+
             />
         <solid
             android:color="@color/colorDivider"

@@ -5,7 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Profile_Activity">
-
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:background="@color/colorDivider"
+        android:orientation="horizontal"
+        >
+    </LinearLayout>
     <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
@@ -25,6 +33,7 @@
             android:layout_marginLeft="10dp"
             />
         <TextView
+            android:id="@+id/tvUsername"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
@@ -51,7 +60,7 @@
             android:textSize="24sp"
             android:gravity="bottom"
             />
-        <EditText
+        <TextView
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -68,15 +77,15 @@
             android:textSize="24sp"
             android:gravity="bottom"
             />
-        <EditText
+
+        <TextView
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/email"
-            android:textSize="20sp"
             android:gravity="center_vertical"
-            />
+            android:text="@string/email"
+            android:textSize="20sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -85,7 +94,7 @@
             android:textSize="24sp"
             android:gravity="bottom"
             />
-        <EditText
+        <TextView
             android:id="@+id/etNumber"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -95,18 +104,4 @@
             android:gravity="center_vertical"
             />
     </LinearLayout>
-    <Button
-        android:id="@+id/btnsave"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:text="Save"
-        android:textSize="24sp"
-        android:background="@drawable/rounded_buttton"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="10dp"
-        />
 </LinearLayout>

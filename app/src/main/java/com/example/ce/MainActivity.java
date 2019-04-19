@@ -38,13 +38,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         loading = findViewById(R.id.loading);
-        username = (EditText)findViewById(R.id.etUname);
-        password = (EditText)findViewById(R.id.etPword);
-        signin = (Button)findViewById(R.id.btnsignin);
+        username = findViewById(R.id.etUname);
+        password = findViewById(R.id.etPword);
+        signin = findViewById(R.id.btnsignin);
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String str_username = username.getText().toString();
                 String str_password = password.getText().toString();
 
@@ -55,37 +56,36 @@ public class MainActivity extends AppCompatActivity {
                     username.setError("Please insert username");
                     password.setError("Please insert password");
                 }
+
             }
+
         });
     }
     public void Login(final String username, final String password) {
 
         loading.setVisibility(View.VISIBLE);
-        signin.setVisibility(View.GONE);
-        //System.out.println(username+" "+password);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN,new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
                 try{
-                    //System.out.println(username+" "+password);
                     JSONObject jsonObject = new JSONObject(response);
                     String success  = jsonObject.getString("success");
 
-                    JSONArray jsonArray = jsonObject.getJSONArray("data");
                     if(success.equals("true")){
-
-                        for (int i= 0; i < jsonArray.length(); i++){
-                            JSONObject object = jsonArray.getJSONObject(i);
-                            String name = object.getString("name");
-                            String username = object.getString("username");
-
-                            //Toast.makeText(MainActivity.this,"Success login \n Your name: "+name+"Your username : "+username,Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this,Adds.class);
-                            startActivity(intent);
-
-                            loading.setVisibility(View.GONE);
-                        }
+                        JSONObject jsonArray= jsonObject.getJSONObject("data");
+                        String name = jsonArray.getString("name");
+                        String username = jsonArray.getString("username");
+                        Intent intent = new Intent(MainActivity.this,Adds.class);
+                        startActivity(intent);
+                        loading.setVisibility(View.GONE);
+                        Intent i = new Intent(MainActivity.this, Profile_Activity.class);
+                        //String strName = null;
+                        i.putExtra("username", username);
+                    }
+                    else{
+                        loading.setVisibility(View.GONE);
+                        Toast.makeText(MainActivity.this,"Check Username/Password",Toast.LENGTH_SHORT).show();
                     }
                 }
                 catch (JSONException e){
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             })
         {
             @Override
-            protected Map<String ,String> getParams(){
+            protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<String,String>();
                 params.put("username",username);
                 params.put("password",password);
