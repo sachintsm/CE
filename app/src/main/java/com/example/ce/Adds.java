@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,21 +35,14 @@ import java.util.List;
 
 public class Adds extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    String usrname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adds);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,6 +52,12 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        /************************************************************************************************************************/
+        TextView uname = (TextView) findViewById(R.id.tvuname);
+        Intent i = getIntent();
+        usrname = i.getStringExtra("uname");
+        uname.setText(usrname);
     }
     /************************************************************************************************************************/
     @Override
@@ -150,6 +150,10 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.nav_postAdd:
                 Intent intent1 = new Intent(Adds.this,Postadd_Activity.class);
                 startActivity(intent1);
+
+                Intent in = new Intent(Adds.this,Postadd_Activity.class);
+                in.putExtra("uname",usrname);
+                startActivity(in);
                 break;
             case R.id.nav_myAdd:
                 break;
@@ -157,6 +161,9 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
                 Intent intent = new Intent(Adds.this,Profile_Activity.class);
                 startActivity(intent);
 
+                Intent i = new Intent(Adds.this,Profile_Activity.class);
+                i.putExtra("uname",usrname);
+                startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

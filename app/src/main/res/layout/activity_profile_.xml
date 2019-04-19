@@ -5,21 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Profile_Activity">
-    <LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:background="@color/colorDivider"
-        android:orientation="horizontal"
-        >
-    </LinearLayout>
+
     <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorDivider"
         android:orientation="horizontal"
         >
         <ImageView
@@ -28,21 +20,23 @@
             android:layout_weight="1"
             android:src="@drawable/ic_person_black_24dp"
             android:gravity="bottom"
-            android:layout_marginBottom="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="10dp"
-            />
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp" />
+
         <TextView
             android:id="@+id/tvUsername"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_weight="2"
-            android:text="@string/username"
-            android:textColor="@color/colorLightPrimary"
-            android:textSize="28sp"
             android:gravity="bottom"
-            android:layout_marginBottom="45dp"
-            />
+            android:text="@string/username"
+            android:textColor="@color/colorText"
+            android:textSize="28sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -57,51 +51,101 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/fname"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:gravity="bottom"
             />
-        <TextView
-            android:id="@+id/etName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/fname"
-            android:textSize="20sp"
-            android:gravity="center_vertical"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/email"
-            android:textSize="24sp"
-            android:gravity="bottom"
-            />
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/fullname"/>
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fname"
+                android:textSize="20sp" />
+        </LinearLayout>
+
 
         <TextView
-            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
+            android:gravity="bottom"
             android:text="@string/email"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/email"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fname"
+                android:textSize="20sp" />
+        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/number"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:gravity="bottom"
             />
-        <TextView
-            android:id="@+id/etNumber"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/number"
-            android:textSize="20sp"
-            android:gravity="center_vertical"
-            />
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/number"/>
+
+            <EditText
+                android:id="@+id/etNumber"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/fname"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/colorDivider"
+        android:orientation="horizontal"
+        >
     </LinearLayout>
 </LinearLayout>

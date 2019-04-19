@@ -76,12 +76,15 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonArray= jsonObject.getJSONObject("data");
                         String name = jsonArray.getString("name");
                         String username = jsonArray.getString("username");
+
                         Intent intent = new Intent(MainActivity.this,Adds.class);
                         startActivity(intent);
+
                         loading.setVisibility(View.GONE);
-                        Intent i = new Intent(MainActivity.this, Profile_Activity.class);
-                        //String strName = null;
-                        i.putExtra("username", username);
+
+                        Intent i = new Intent(MainActivity.this, Adds.class);
+                        i.putExtra("uname", username);
+                        startActivity(i);
                     }
                     else{
                         loading.setVisibility(View.GONE);

@@ -43,7 +43,7 @@ public class Postadd_Activity extends AppCompatActivity implements View.OnClickL
     private Bitmap bitmap;
     private final int IMG_REQUEST = 1;
 
-    String username,district;
+    String username,usrname,district;
     private String url = "http://idexserver.tk/sachinCE/adds/postadd.php";
 
     @Override
@@ -64,8 +64,6 @@ public class Postadd_Activity extends AppCompatActivity implements View.OnClickL
         pdate = findViewById(R.id.tvdate);
 
         district = String.valueOf(pdistrict.getSelectedItem());
-//        Bundle bundle = getIntent().getExtras();
-//        username = bundle.getString("username");
 
         Calendar calendar = Calendar.getInstance();
         String currentdate = DateFormat.getInstance().format(calendar.getTime());
@@ -75,7 +73,12 @@ public class Postadd_Activity extends AppCompatActivity implements View.OnClickL
         btnclear.setOnClickListener(this);
         btnpostnow.setOnClickListener(this);
 
-
+        //take username
+        TextView pusername = (TextView) findViewById(R.id.tvuname);
+        Intent i = getIntent();
+        usrname = i.getStringExtra("uname");
+        pusername.setText(usrname);
+        username = pusername.getText().toString();
     }
     @Override
     public void onClick(View v) {
@@ -113,13 +116,13 @@ public class Postadd_Activity extends AppCompatActivity implements View.OnClickL
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                //params.put("username",username);
+                params.put("username",username);
                 params.put("item",pitem.getText().toString().trim());
                 params.put("description",pdescription.getText().toString().trim());
                 params.put("district",district);
                 params.put("city",pcity.getText().toString().trim());
                 params.put("date",pdate.getText().toString().trim());
-                //params.put("photo",imageToString(bitmap));
+                params.put("photo",imageToString(bitmap));
                 return params;
             }
         };
