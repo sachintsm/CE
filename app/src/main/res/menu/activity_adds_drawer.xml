@@ -6,15 +6,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_postAdd"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/postadd"
             android:title="Post Add" />
         <item
             android:id="@+id/nav_myAdd"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/myadds"
             android:title="My Adds" />
         <item
             android:id="@+id/nav_myprofile"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/myprofile"
             android:title="My Profile" />
         <item
             android:id="@+id/nav_manage"
@@ -30,7 +30,7 @@
                 android:title="Share" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/logout"
                 android:title="Logout" />
         </menu>
     </item>

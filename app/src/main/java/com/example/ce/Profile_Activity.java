@@ -40,6 +40,7 @@ public class Profile_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_);
 
+
         premail = findViewById(R.id.etEmail);
         prnumber = findViewById(R.id.etNumber);
         prname = findViewById(R.id.etName);
@@ -54,6 +55,7 @@ public class Profile_Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
 
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://idexserver.tk/sachinCE/user/profile.php";

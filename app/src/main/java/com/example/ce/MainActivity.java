@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
                     if(success.equals("true")){
                         JSONObject jsonArray= jsonObject.getJSONObject("data");
-                        String name = jsonArray.getString("name");
                         String username = jsonArray.getString("username");
 
                         Intent intent = new Intent(MainActivity.this,Adds.class);

@@ -61,7 +61,7 @@
             android:textSize="15sp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorDivider"
             android:background="@drawable/rounded_buttton"
             />
     </LinearLayout>
