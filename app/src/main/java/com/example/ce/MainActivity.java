@@ -76,9 +76,6 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonArray= jsonObject.getJSONObject("data");
                         String username = jsonArray.getString("username");
 
-                        Intent intent = new Intent(MainActivity.this,Adds.class);
-                        startActivity(intent);
-
                         loading.setVisibility(View.GONE);
 
                         Intent i = new Intent(MainActivity.this, Adds.class);

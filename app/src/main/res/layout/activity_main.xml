@@ -20,39 +20,63 @@
     <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.3"
         android:visibility="gone"
         android:id="@+id/loading"
         />
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/etUname"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="40dp"
+            android:src="@drawable/loginuname"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/etUname"
+        android:layout_weight="4"
         android:hint="@string/username"
         android:gravity="bottom"
-        android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorSecondaryText"
         android:backgroundTint="@color/colorText"
         android:textSize="18sp" />
+    </LinearLayout>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logingpassword"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
         android:inputType="textPassword"
         android:id="@+id/etPword"
         android:hint="@string/password"
         android:gravity="bottom"
         android:textSize="18sp"
-        android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:textColorHint="@color/colorSecondaryText"
         android:backgroundTint="@color/colorText"
         android:textColor="@color/colorText"
         />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0sp"

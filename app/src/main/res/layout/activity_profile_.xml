@@ -63,7 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
                 android:layout_height="match_parent"
-                android:padding="5dp"
+                android:padding="9dp"
                 android:src="@drawable/fullname"/>
 
             <EditText
@@ -95,7 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
                 android:layout_height="match_parent"
-                android:padding="5dp"
+                android:padding="9dp"
                 android:src="@drawable/email"/>
 
             <EditText
@@ -125,7 +125,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
                 android:layout_height="match_parent"
-                android:padding="5dp"
+                android:padding="9dp"
                 android:src="@drawable/number"/>
 
             <EditText

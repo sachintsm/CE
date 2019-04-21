@@ -72,6 +72,13 @@
         android:text="@string/description"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp" />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:visibility="gone"
+        android:id="@+id/loading"
+        />
     <EditText
         android:id="@+id/etdescription"
         android:layout_width="match_parent"

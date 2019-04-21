@@ -40,11 +40,13 @@ public class Register_Activity extends AppCompatActivity {
         String username = rusername.getText().toString();
         String conpassword = rconpassword.getText().toString();
 
-//        if(password != conpassword){
-//            Toast.makeText(this,"Password didn't match !",Toast.LENGTH_SHORT).show();
-//        }
         if(name.isEmpty() || email.isEmpty() || password.isEmpty() || number.isEmpty() || username.isEmpty()){
-            Toast.makeText(this,"Fill all fields !...",Toast.LENGTH_SHORT).show();
+            rusername.setError("Please insert username");
+            rpassword.setError("Please insert password");
+            rconpassword.setError("Please insert password");
+            remail.setError("Please insert email");
+            rnumber.setError("Please insert mobile number");
+            rname.setError("Please insert your name");
         }
         else{
             String type = "register";

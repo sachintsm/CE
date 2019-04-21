@@ -14,71 +14,158 @@
         android:layout_weight="1.5"
         android:scaleType="fitCenter"
         android:src="@drawable/logos" />
-
-    <EditText
-        android:id="@+id/etUsername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="@string/uname"
-        android:textColor="@color/colorText"
-        android:textColorHint="@color/colorDivider"
-        android:backgroundTint="@color/colorDivider"
-        android:textSize="18dp" />
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/username"/>
 
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_marginRight="40dp"
+            android:gravity="bottom"
+            android:hint="@string/uname"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorDivider"
+            android:backgroundTint="@color/colorDivider"
+            android:textSize="18dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/fullname"/>
     <EditText
         android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="40dp"
+        android:gravity="bottom"
+
         android:hint="@string/fname"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorDivider"
         android:backgroundTint="@color/colorDivider"
         android:textSize="18dp" />
-    <EditText
-        android:id="@+id/etEmail"
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/email"/>
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="40dp"
+        android:gravity="bottom"
+
         android:hint="@string/email"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorDivider"
         android:backgroundTint="@color/colorDivider"
         android:textSize="18dp" />
-    <EditText
-        android:id="@+id/etPassword"
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/password"/>
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="40dp"
+        android:gravity="bottom"
+
         android:hint="@string/password"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorDivider"
         android:backgroundTint="@color/colorDivider"
         android:inputType="textPassword"
         android:textSize="18dp" />
-
-    <EditText
-        android:id="@+id/etConpassword"
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/password"/>
+    <EditText
+        android:id="@+id/etConpassword"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="40dp"
+        android:gravity="bottom"
+
         android:backgroundTint="@color/colorDivider"
         android:hint="@string/confirmpass"
         android:inputType="textPassword"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorDivider"
         android:textSize="18dp" />
-    <EditText
-        android:id="@+id/etNumber"
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@drawable/number"/>
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="40dp"
+        android:gravity="bottom"
+
         android:backgroundTint="@color/colorDivider"
         android:hint="@string/mobilenumber"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorDivider"
         android:textSize="18dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

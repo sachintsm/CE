@@ -40,7 +40,6 @@ public class Profile_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_);
 
-
         premail = findViewById(R.id.etEmail);
         prnumber = findViewById(R.id.etNumber);
         prname = findViewById(R.id.etName);

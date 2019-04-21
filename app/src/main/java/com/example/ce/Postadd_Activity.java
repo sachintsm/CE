@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class Postadd_Activity extends AppCompatActivity{
     private EditText pitem,pdescription,pcity;
     private Spinner pdistrict;
     private TextView pdate;
+    private ProgressBar loading;
     private Bitmap bitmap;
 
     String username,usrname;
@@ -52,6 +54,7 @@ public class Postadd_Activity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postadd_);
 
+        loading = findViewById(R.id.loading);
         btnpostnow = findViewById(R.id.btnpostnow);
         btnphoto = findViewById(R.id.btnphoto);
         btnclear = findViewById(R.id.btnclear);
@@ -107,6 +110,7 @@ public class Postadd_Activity extends AppCompatActivity{
     }
 
     public void postAdd() {
+        loading.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -115,15 +119,18 @@ public class Postadd_Activity extends AppCompatActivity{
 
                         if(s.equalsIgnoreCase("false")){
                             Toast.makeText(Postadd_Activity.this, "Error details" , Toast.LENGTH_SHORT).show();
+                            loading.setVisibility(View.GONE);
                         }
                         else{
                             Toast.makeText(Postadd_Activity.this, "Success uploading", Toast.LENGTH_SHORT).show();
+                            loading.setVisibility(View.GONE);
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        loading.setVisibility(View.GONE);
                         Toast.makeText(Postadd_Activity.this, "Error reading details" + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -144,10 +151,7 @@ public class Postadd_Activity extends AppCompatActivity{
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
-
-
-
+    
     private String getStringImage(Bitmap bitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);

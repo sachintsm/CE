@@ -20,7 +20,7 @@
     <string name="thankyou">Thank you</string>
     <string name="success">Your CEYLON EXPRESS account is successfully created!</string>
     <string name="title_activity_deals">deals</string>
-    <string name="mobilenumber">Mobile Number (07X XXXXXXX)</string>
+    <string name="mobilenumber">Mobile Number</string>
     <string name="number">Mobile Number</string>
     <string name="reset">Reset</string>
     <string name="orders">Orders</string>

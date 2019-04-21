@@ -148,19 +148,16 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
 
         switch (id){
             case R.id.nav_postAdd:
-                Intent intent1 = new Intent(Adds.this,Postadd_Activity.class);
-                startActivity(intent1);
-
                 Intent in = new Intent(Adds.this,Postadd_Activity.class);
                 in.putExtra("uname",usrname);
                 startActivity(in);
                 break;
             case R.id.nav_myAdd:
+                Intent intent2 = new Intent(Adds.this,Postadd_Activity.class);
+                intent2.putExtra("uname",usrname);
+                startActivity(intent2);
                 break;
             case R.id.nav_myprofile:
-                Intent intent = new Intent(Adds.this,Profile_Activity.class);
-                startActivity(intent);
-
                 Intent i = new Intent(Adds.this,Profile_Activity.class);
                 i.putExtra("uname",usrname);
                 startActivity(i);
