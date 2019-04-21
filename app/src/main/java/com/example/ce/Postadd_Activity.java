@@ -39,7 +39,7 @@ import java.util.Map;
 public class Postadd_Activity extends AppCompatActivity{
 
     private ImageView ivphoto;
-    private Button btnphoto,btnpostnow,btnclear;
+    private Button btnphoto,btnpostnow;
     private EditText pitem,pdescription,pcity;
     private Spinner pdistrict;
     private TextView pdate;
@@ -57,7 +57,7 @@ public class Postadd_Activity extends AppCompatActivity{
         loading = findViewById(R.id.loading);
         btnpostnow = findViewById(R.id.btnpostnow);
         btnphoto = findViewById(R.id.btnphoto);
-        btnclear = findViewById(R.id.btnclear);
+
 
         ivphoto = findViewById(R.id.ivphoto);
 
@@ -151,7 +151,7 @@ public class Postadd_Activity extends AppCompatActivity{
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-    
+
     private String getStringImage(Bitmap bitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
