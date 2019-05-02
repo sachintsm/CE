@@ -33,7 +33,6 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-
             android:layout_marginTop="40dp"
             android:src="@drawable/loginuname"/>
     <EditText
@@ -122,12 +121,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_weight="0.3"
         android:text="New user? Register now"
         android:textColor="@color/colorSecondaryText"
         android:textAlignment="center"
         android:textSize="14sp"
         android:id="@+id/tvRegister"
         android:onClick="openReg"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:text="@string/forgotpassword"
+        android:textColor="@color/colorSecondaryText"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:id="@+id/tvForgetpassword"
+        android:onClick="reset"
         />
 </LinearLayout>

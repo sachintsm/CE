@@ -11,6 +11,8 @@
     <string name="Dont_have_Acc">Don\'t have an account?</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="save">Save</string>
+    <string name="newpassword">New password</string>
     <string name="forgetpasword">Forgot password?</string>
     <string name="uname">User Name</string>
     <string name="fname">Full name</string>
@@ -29,6 +31,7 @@
     <string name="wishlist">Wish list</string>
     <string name="toberev">To be reviewed</string>
     <string name="wallet">Wallet</string>
+    <string name="forgotpassword">Forgot password?</string>
     <string name="qanda">Question and Answer</string>
     <string name="settings">Settings</string>
     <string name="tobeship">To be shipped</string>

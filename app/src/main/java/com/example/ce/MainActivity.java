@@ -120,4 +120,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Register_Activity.class);
         startActivity(intent);
     }
+    public void reset(View v){
+        Intent intent = new Intent(this,ResetPassword_Activity.class);
+        startActivity(intent);
+    }
 }

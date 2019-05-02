@@ -8,6 +8,7 @@
     <color name="colorSecondaryText">#bdbdbd</color>
     <color name="colorPrimaryText">#536DFE</color>
     <color name="colorDivider">#ff7043</color>
+    <color name="colorHint">#C27662</color>
     <color name="error">#FC0000</color>
     <color name="green">#1b5e20</color>
     <color name="red">#d50000</color>

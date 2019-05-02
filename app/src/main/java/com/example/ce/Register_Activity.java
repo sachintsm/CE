@@ -49,17 +49,23 @@ public class Register_Activity extends AppCompatActivity {
             rname.setError("Please insert your name");
         }
         else{
-            String type = "register";
+            if(!password.equals(conpassword)){
+                Toast.makeText(Register_Activity.this,"Password didn't match !",Toast.LENGTH_LONG).show();
+            }
+            else {
 
-            DBHelper dbHelper = new DBHelper(this);
-            dbHelper.execute(type,name,username,email,password,number);
+                String type = "register";
 
-            rregister.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(Register_Activity.this,Welcome_Activity.class));
-                }
-            });
+                DBHelper dbHelper = new DBHelper(this);
+                dbHelper.execute(type, name, username, email, password, number);
+
+                rregister.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Register_Activity.this, Welcome_Activity.class));
+                    }
+                });
+            }
         }
     }
 }
