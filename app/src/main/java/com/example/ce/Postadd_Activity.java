@@ -47,7 +47,7 @@ public class Postadd_Activity extends AppCompatActivity{
     private Bitmap bitmap;
 
     String username,usrname;
-    private String url = "http://idexserver.tk/sachinCE/adds/postadd.php";
+    private String url = "http://sachintsm.tk/adds/postadd.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -65,7 +65,7 @@ public class Adds extends AppCompatActivity implements NavigationView.OnNavigati
         super.onResume();
         final ListView lv = findViewById(R.id.addlist);
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://idexserver.tk/sachinCE/adds/list.php";
+        String url = "http://sachintsm.tk/adds/list.php";
 
         JsonArrayRequest request1 = new JsonArrayRequest(
                 Request.Method.GET,

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button signin;
     private ProgressBar loading;
-    private static String URL_LOGIN = "http://idexserver.tk/sachinCE/user/login.php";
+    private static String URL_LOGIN = "http://sachintsm.tk/user/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,7 +33,7 @@ public class Profile_Activity extends AppCompatActivity {
     private EditText prname,premail,prnumber;
     String username,usrname;
     private Menu action;
-    private static String URL_ProfileEdit = "http://idexserver.tk/sachinCE/user/profile.php";
+    private static String URL_ProfileEdit = "http://sachintsm.tk/user/profile.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class Profile_Activity extends AppCompatActivity {
 
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://idexserver.tk/sachinCE/user/profile.php";
+        String url = "http://sachintsm.tk/user/profile.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override

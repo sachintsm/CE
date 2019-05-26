@@ -27,7 +27,7 @@ public class ResetPassword_Activity extends AppCompatActivity {
     private EditText resetConpassword,resetUsername,resetPassword,resetEmail;
     private Button resetSave;
     private ProgressBar loading;
-    private static String URL_LOGIN = "http://idexserver.tk/sachinCE/user/reset_password.php";
+    private static String URL_LOGIN = "http://sachintsm.tk/user/reset_password.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
